@@ -25,14 +25,14 @@ public class AutoSign {
 		String tmpDir = "D:/tmp/";
 		//String tmpDir = "/tmp/";
 		String tmpNum = "";
-		String str = "http://10.1.12.62:8000/sso/login";
+		String str = "http://xx.xx.xx.xx:8000/sso/login";
 		
 		/*SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd hh:MM:ss");
 		System.out.println(user_name + "签到时间:" + sf.format(new Date()));*/
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddkkmmss");
 		tmpNum = sdf.format(new Date());
-		URL url = new URL("http://10.1.12.xx:8000/sso/login");
+		URL url = new URL("http://xx.xx.xx.xx:8000/sso/login");
 		HttpURLConnection connection = null;
 		connection = (HttpURLConnection) url.openConnection();// 建立链接
 		connection.setInstanceFollowRedirects(false);
@@ -93,9 +93,9 @@ public class AutoSign {
 		String signUrl, week;
 		week = getWeekOfDate(new Date());
 		if( week.equals("星期六") || week.equals("星期日") ) {
-			signUrl = "http://10.1.xx.xx/xxx/workAttendance.do?method=list";
+			signUrl = "http://10.xx.xx.xx/xxx/workAttendance.do?method=list";
 		} else {
-			signUrl = "http://10.1.xx.xx/xxx/workAttendance.do?method=add";
+			signUrl = "http://10.xx.xx.xx/xxx/workAttendance.do?method=add";
 		}
 		URL purl = new URL(signUrl);
 		HttpURLConnection pconn = (HttpURLConnection) purl.openConnection();
